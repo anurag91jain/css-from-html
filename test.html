@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="c__padding-left_15 c__padding-right_20 c__xs_padding-right_20 c__xl_padding-left_20"
+		>Hello, World</div>
+		<div
+      class="c__padding-right_15 c__font-size_10 c__xs_margin_20 c__lg_padding-left_20"
+		>Hello, World</div>
+		<div
+      class="c__margin-left_15 c__padding-top_20"
+		>Hello, World</div>
+		<div
+      class="c__font-size_24 c__margin-right_20 c__xs_font-size_10 c__xl_margin-left_20"
+		>Hello, World</div>
+    <script>
+      function unique(e){var t;return e.sort().filter(e=>e!==t&&(t=e))}var start=window.performance.now(),breakpoints={xs:"@media (min-width: 0px)",sm:"@media (min-width: 576px)",md:"@media (min-width: 768px)",lg:"@media (min-width: 992px)",xl:"@media (min-width: 1200px)"},CSSObj={xs:[],sm:[],md:[],lg:[],xl:[],nomq:[]},classList=[].concat(...[...document.querySelectorAll("*")].map(e=>[...e.classList])),uniqueClassList=unique(classList);uniqueClassList.map(e=>{var t=e.split("c__");if(t.length){var s=t[1].split("_");if(3===s.length){var a={element:e,type:s[1],value:s[2]};switch(s[0]){case"xs":CSSObj.xs.push(a);break;case"sm":CSSObj.sm.push(a);break;case"md":CSSObj.md.push(a);break;case"lg":CSSObj.lg.push(a);break;case"xl":CSSObj.xl.push(a)}}else 2===s.length&&CSSObj.nomq.push({element:e,type:s[0],value:s[1]})}});var style=document.createElement("style"),styleText="";Object.keys(CSSObj).forEach(e=>{"nomq"!==e&&(styleText+=`${breakpoints[e]} {`),CSSObj[e].forEach(e=>{styleText+=`.${e.element} {${e.type}: ${e.value}px;}`}),"nomq"!==e&&(styleText+="}")}),console.log(styleText),style.innerHTML=styleText;var ref=document.querySelector("head");ref.parentNode.insertBefore(style,ref);var end=window.performance.now();console.log(`time taken = ${end-start}`);
+    </script>
+  </body>
+</html>
